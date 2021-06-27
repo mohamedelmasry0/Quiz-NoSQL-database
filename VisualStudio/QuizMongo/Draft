@@ -1,0 +1,269 @@
+db.questions.find()
+db.help()
+db.questions.help()
+function insertCity(
+    name,
+    lat,
+    lng,
+    country,
+    admin_name,
+    capital,
+    population,
+    iso2,
+    population_proper
+) {
+    db.cities.insert({
+        city: name,
+        lat: lat,
+        lng: lng,
+        country: country,
+        iso2: iso2,
+        admin_name: admin_name,
+        capital: capital,
+        population: population,
+        population_proper: population_proper
+    });
+}
+
+
+function insertQuestion(
+    question,
+    topic,
+    difficulty,
+    answer
+    
+) {
+    db.questions.insert({
+       question: "What is Mongo?",
+       topic: "Non relational data base",
+       difficulty: "Medium",
+       answer: "A NoSQL non relational data base"
+	});
+}
+
+
+
+insertQuestion(
+"What's Postgres?",
+"Relational data base",
+"Easy",
+"An SQL relational data base"
+);
+
+
+
+function insertQuestion(
+    question,
+    topic,
+    difficulty,
+    answer
+    
+) {
+    db.questions.insert({
+       question: question,
+       topic: topic,
+       difficulty: difficulty,
+       answer: answer
+	});
+}
+
+db.questions.find({difficulty:"Easy"})
+
+show collections
+use sampleDB
+use test
+
+
+
+function insertStudent(
+    name,
+    ID
+) {
+    db.students.insert({
+        student_name: student_name,
+        ID: ID
+        
+    });
+}
+
+
+load("Answers.js")
+
+
+
+
+
+use test
+
+
+db.Students.insertOne({
+"name":"ELMASRY Mohamed",
+"ID": "1"})
+
+
+
+db.MCQChoice.insertOne({
+"question":"Who invented Java?",
+"choice1": "Marrtin Martin",
+"Choice2": "beau frère du Martin Martin",
+"Choice3":"Programmer Martine Martin"})
+
+
+function insertMCQChoix(
+    question,
+    Choice1,
+    Choice2,
+    Choice3
+) {
+    db.MCQChoice.insert({
+        question: question,
+   	Choice1: choice1,
+    	Choice2: choice2,
+    	Choice3: choice3
+    });
+}
+
+
+mongodb://localhost27017
+
+
+db.questions.deleteOne({
+    "difficulty": "Medium"
+});
+
+
+
+use Quiz
+
+
+
+db.Questions.insertOne({
+"Question":"What is Mongo?",
+"Topic": ["Programming", "NoSQL","Database" ],
+"Difficulty": "Medium"
+})
+
+
+
+use Quiz
+db.MCQQuestions.insertOne({
+  
+  "Question":"What is Mongo?",
+  "Topic": ["Programming", "NoSQL","Database"],
+  "Difficulty": "Medium",
+  "Choices":[
+  {"choice":1,"choiceLabel":"Sql","valid":false},
+  {"Choice":2,"choiceLabel":"NoSQL","valid":true},
+  {"Choice":3,"choiceLabel":"Animal","valid":false}
+  ]
+})
+
+
+
+db.Answers.insertOne({
+"Question": ObjectId("609969dd7162d029d20a9d44"),
+"Answer": "A NoSQL non relational database system" 
+
+})
+
+
+function insertQuestion(
+    Question,
+    Topic,
+    Difficulty
+    
+    
+) {
+    db.questions.insert({ Question: "What's Postgres?",
+    Topic: ["Programming", "SQL","Database" ],
+    Difficulty: "Easy"
+    
+ });
+}
+
+
+db.Questions.insert({ Question: "What's Postgres?",
+    Topic: ["Programming", "SQL","Database" ],
+    Difficulty: "Easy"
+    
+ });
+
+
+
+///delete collection      db.students.drop()
+
+
+
+
+db.Test.insertOne({
+  
+    "Topic":"NoSQL",
+    "Difficulty": "Medium",
+    "questions":[
+    ObjectId("609969dd7162d029d20a9d44"), ObjectId("609971eb7162d029d20a9d45")
+    ]
+  })
+
+
+
+db.Answers.aggregate({
+    $lookup: {
+        from: "Questions",
+        localField: "Question",
+        foreignField: "_id",
+        as: "questionData"
+    }
+})
+
+
+ function insertStudent(
+        name,
+        ID
+        
+        
+    ) {
+        db.Students.insert({ 
+            name: "MARTIN Martin",
+            ID:"2"
+        
+     });
+    }
+    
+
+db.Test.aggregate({
+    $lookup: {
+        from: "Questions",
+        localField: "Question",
+        foreignField: "_id",
+        as: "questionData"
+    }
+})
+
+
+
+db.Test.insert({
+  
+    "Topic":"SQL",
+    "Difficulty": "Easy",
+    "questions":[
+    ObjectId("609998f9e72e605c4093e72d"), ObjectId("60997d857162d029d20a9d48")
+    ]
+  })
+
+
+db.MCQQuestions.insert({
+  
+  "Question":"What is Postgres?",
+  "Topic": ["Programming", "NoSQL","Database"],
+  "Difficulty": "Easy",
+  "Choices":[
+  {"choice":1,"choiceLabel":"Sql","valid":true},
+  {"Choice":2,"choiceLabel":"NoSQL","valid":false},
+  {"Choice":3,"choiceLabel":"Animal","valid":false}
+  ]
+})
+
+
+db.Students.insert({
+"name":"ELMASRY Mohamed",
+"ID": "1"})
